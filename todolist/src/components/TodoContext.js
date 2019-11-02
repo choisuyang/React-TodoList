@@ -34,7 +34,7 @@ function todoReducer(state, action) {
     case "REMOVE":
       return state.filter(todo => todo.id !== action.id);
     default:
-      throw new Error(`Unhandled action type: ${action.type}`);
+      throw new Error(`Unhandled action type:  ${action.type}`);
   }
 }
 
@@ -70,10 +70,12 @@ export function useTodoDispatch() {
   if (!context) {
     throw new Error("Cannot find TodoProvider");
   }
+  return context;
 }
 export function useTodoNextId() {
   const context = useContext(TodoNextIdContext);
   if (!context) {
     throw new Error("Cannot find TodoProvider");
   }
+  return context;
 }
